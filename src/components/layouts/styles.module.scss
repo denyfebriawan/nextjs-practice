@@ -1,0 +1,27 @@
+.navbar {
+  background-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.link {
+  margin: 10px;
+  padding: 10px;
+
+  &:hover {
+    color: rgb(2, 188, 167);
+  }
+
+  &__active {
+    background-color: rgb(2, 188, 167);
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
