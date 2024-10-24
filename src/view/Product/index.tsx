@@ -12,7 +12,7 @@ const ProductView = ({ products }: { products: Product[] }) => {
           <>
             {products.map((product: Product) => (
               <Link
-                href={`/product/${product.id}`}
+                href={`/products/${product.id}`}
                 className={styles.product__content__item}
                 key={product.id}
               >
