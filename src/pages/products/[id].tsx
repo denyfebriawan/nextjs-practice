@@ -1,5 +1,6 @@
 import axiosClient from "@/lib/axiosClient";
 import { Product } from "@/types/Product";
+import DetailProductView from "@/view/DetailProduct";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -20,18 +21,15 @@ const DetailProduct = () => {
     fetchProduct();
   }, [query.id]); // Tambahkan query.id sebagai ketergantungan
 
-  if (!product) {
-    return <div>Loading...</div>; // Tampilkan loading jika produk belum ada
-  }
-
   return (
-    <div>
-      <h1>Detail produk : {product.name}</h1>{" "}
-      {/* Ganti product.id dengan product.name */}
-      <p>ID: {product.id}</p>
-      <p>Category: {product.category}</p>
-      {/* Render properti lainnya sesuai kebutuhan */}
-    </div>
+    <DetailProductView product={product} />
+    // <div>
+    //   <h1>Detail produk : {product.name}</h1>{" "}
+    //   {/* Ganti product.id dengan product.name */}
+    //   <p>ID: {product.id}</p>
+    //   <p>Category: {product.category}</p>
+    //   {/* Render properti lainnya sesuai kebutuhan */}
+    // </div>
   );
 };
 

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "@/pages/products/Product.module.scss";
+import styles from "@/view/Product/Product.module.scss";
 import Link from "next/link";
 import { Product } from "@/types/Product";
 
