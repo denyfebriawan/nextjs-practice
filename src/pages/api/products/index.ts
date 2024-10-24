@@ -1,10 +1,12 @@
 import { retrieveData } from "@/lib/firebase/service";
 import { NextApiRequest, NextApiResponse } from "next";
+import { Product } from "@/types/Product";
 
 type Data = {
   status: boolean;
   statusCode: number;
-  products: any;
+  message: string;
+  products: Product[];
 };
 
 export default async function handler(
@@ -12,5 +14,10 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const products = await retrieveData("products");
-  res.status(200).json({ status: true, statusCode: 200, products });
+  res.status(200).json({
+    status: true,
+    statusCode: 200,
+    message: "Produk berhasil diambil",
+    products,
+  });
 }

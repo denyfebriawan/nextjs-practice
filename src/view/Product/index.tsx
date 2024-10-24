@@ -1,15 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "@/pages/products/Product.module.scss";
-
-type Product = {
-  id: number;
-  image: string;
-  name: string;
-  description: string;
-  category: string;
-  price: number;
-  rating: string;
-};
+import Link from "next/link";
+import { Product } from "@/types/Product";
 
 const ProductView = ({ products }: { products: Product[] }) => {
   return (
@@ -19,7 +11,11 @@ const ProductView = ({ products }: { products: Product[] }) => {
         {products.length > 0 ? (
           <>
             {products.map((product: Product) => (
-              <div className={styles.product__content__item} key={product.id}>
+              <Link
+                href={`/product/${product.id}`}
+                className={styles.product__content__item}
+                key={product.id}
+              >
                 <img
                   className={styles.product__content__item__image}
                   src={product.image}
@@ -41,7 +37,7 @@ const ProductView = ({ products }: { products: Product[] }) => {
                   <span>rating : </span>
                   {product.rating}
                 </div>
-              </div>
+              </Link>
             ))}
           </>
         ) : (
